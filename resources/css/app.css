@@ -1,3 +1,81 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Ant Carousel*/
+.ant-carousel .slick-dots li::after {
+    background: var(
+        --Linear,
+        linear-gradient(90deg, #531985 0.21%, #a44a98 93.09%)
+    );
+}
+
+.ant-carousel .slick-dots li,
+.ant-carousel .slick-dots li button,
+.ant-carousel .slick-dots li button::after,
+.ant-carousel .slick-dots li.slick-active::after,
+.ant-carousel .slick-dots li.slick-active {
+    border-radius: 3px;
+    height: 6px;
+    width: 60px;
+}
+
+:where(.css-dev-only-do-not-override-36gkoj).ant-carousel
+    .slick-dots
+    li
+    button {
+    background: var(--Indigo-25, #fcf9ff);
+    opacity: 1;
+}
+
+.ant-carousel .slick-dots {
+    margin-bottom: 23px;
+    gap: 8px;
+}
+
+.ant-carousel .slick-next,
+.ant-carousel .slick-prev {
+    height: 52px;
+    width: 52px;
+    border-radius: 6px;
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.ant-carousel .slick-next {
+    margin-right: 36px;
+}
+
+.ant-carousel .slick-prev {
+    margin-left: 36px;
+}
+
+.ant-carousel .slick-next::after,
+.ant-carousel .slick-prev:after {
+    position: static;
+}
+
+@media (max-width: 767px) {
+    .ant-carousel .slick-next {
+        margin-right: 12px;
+    }
+
+    .ant-carousel .slick-prev {
+        margin-left: 12px;
+    }
+
+    .ant-carousel .slick-dots {
+        margin-bottom: 12px;
+        gap: 4px;
+    }
+}
+
+@media (min-width: 768px) {
+    .ant-drawer-left > .ant-drawer-content-wrapper {
+        width: 285px;
+    }
+}
+
+.ant-drawer .ant-drawer-body {
+    padding: 32px 20px 20px 20px;
+}
