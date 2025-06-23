@@ -61,55 +61,55 @@ export default function Navbar() {
                     <div className="flex flex-col gap-[24px]">
                         <div className="flex gap-[20px] text-base font-medium items-center">
                             <ProfileIcon />
-                            登入/註冊
+                            {t('login_register')}
                         </div>
                         <div className="bg-gray-100 h-[1px]"> </div>
                         <div className="flex flex-col gap-[12px]  text-base font-medium">
                             <div className="p-3">
                                 <div className="flex gap-3">
                                     <HomeIcon />
-                                    <p>首頁</p>
+                                    <p>{t('home')}</p>
                                 </div>
                             </div>
                             <div className="p-3">
                                 <div className="flex gap-3">
                                     <AboutIcon />
-                                    <p>關於我們</p>
+                                    <p>{t('about')}</p>
                                 </div>
                             </div>
                             <div className="p-3">
                                 <div className="flex gap-3">
                                     <ProductIcon />
-                                    <p>產品</p>
+                                    <p>{t('product')}</p>
                                 </div>
                             </div>
                             <div className="p-3">
                                 <div className="flex gap-3">
                                     <NewsIcon />
-                                    <p>新聞</p>
+                                    <p>{t('news')}</p>
                                 </div>
                             </div>
                             <div className="p-3">
                                 <div className="flex gap-3">
                                     <TrackingIcon />
-                                    <p>查看物流</p>
+                                    <p>{t('tracking')}</p>
                                 </div>
                             </div>
                             <div className="p-3">
                                 <div className="flex gap-3">
                                     <ContactIcon />
-                                    <p>聯絡客服</p>
+                                    <p>{t('contact')}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="flex flex-start w-[120px]">
-                        <Logo />
+                        <Logo height={31.44} width={120} className={""}/>
                     </div>
                 </div>
             </Drawer>
 
-            <nav className="flex items-center gap-[8px] hidden lg:flex">
+            <nav className="items-center gap-[8px] hidden lg:flex">
                 {navItems.map((item, idx) => (
                     <Link href={item.href} key={idx}>
                         <div className="px-4 py-2 text-sm font-bold text-gray-900 hover:text-indigo-600">

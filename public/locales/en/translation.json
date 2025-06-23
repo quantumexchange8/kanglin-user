@@ -2,5 +2,8 @@
     "home": "Home",
     "about": "About",
     "product": "Product",
-    "news": "News"    
+    "news": "News",
+    "login_register": "Login/Register",
+    "tracking": "Tracking",
+    "contact": "Contact"
 }

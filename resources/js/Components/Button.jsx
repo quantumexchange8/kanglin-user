@@ -5,14 +5,9 @@ export default ({
     className = "",
     processing,
     children,
-    href,
-    target,
-    external,
     variant = "primary",
     size = "base",
     iconOnly,
-    squared = false,
-    pill = false,
     srText,
     onClick,
     disabled,
@@ -27,9 +22,6 @@ export default ({
             break;
         case "tertiary":
             variantClasses = `border-2 border-[#53198580] border-solid text-indigo-900 font-medium hover:text-indigo-50 hover:bg-indigo-900`;
-            break;
-        case "neutral":
-            variantClasses = `text-gray-50 bg-gray-900 font-medium hover:bg-gray-950`;
             break;
         case "neutral":
             variantClasses = `text-gray-50 bg-gray-900 font-medium hover:bg-gray-950`;

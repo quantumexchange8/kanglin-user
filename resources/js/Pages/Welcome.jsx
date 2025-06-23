@@ -1,4 +1,5 @@
 import Banner from "@/Components/Banner";
+import BenefitSection from "@/Pages/Guest/BenefitSection";
 import Button from "@/Components/Button";
 import HeroSection from "@/Components/HeroSection";
 import InputError from "@/Components/InputError";
@@ -21,10 +22,22 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
 
     return (
         <GuestLayout>
-            <Banner />
-            <HeroSection />
             <Head title="Welcome" />
-        
+
+            {/* Banner Section */}
+            <div className="flex flex-col w-full">
+                <Banner />
+                <HeroSection />
+            </div>
+
+            {/* Benefit Section */}
+            <div>
+                <BenefitSection />
+            </div>
+
+            {/* Benefit Section */}
+
+
         </GuestLayout>
     );
 }

@@ -27,7 +27,6 @@ const HeroSection = () => (
                 ></h3>
             </div>
         </Carousel>
-        <br />
     </>
 );
 export default HeroSection;
