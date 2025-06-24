@@ -1,17 +1,23 @@
 import React from "react";
 import { StarIcon } from "./Icon";
+import { Rate } from "antd";
 
 const Testimonial = () => {
     return (
         <>
             <div className="flex flex-col gap-3 p-6 bg-white rounded-[5px] w-[329px]">
-                <div className="flex gap-1 items-center">
+                {/* CHANGE THIS ----> */}
+                {/* <div className="flex gap-1 items-center">
                     <StarIcon />
                     <StarIcon />
                     <StarIcon />
                     <StarIcon />
                     <StarIcon />
-                </div>
+                </div> */}
+                
+                {/* TO THIS -----> */}
+                <Rate disabled defaultValue={5}  />
+
                 <div className="flex flex-col justify-between">
                     <div className="flex flex-col gap-2">
                         <p className="text-lg font-bold">退休後的生活，原來還能這麼精彩。</p>

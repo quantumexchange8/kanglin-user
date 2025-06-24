@@ -11,7 +11,7 @@ const GuestLayout = forwardRef(function GuestLayout({ children }, ref) {
         <>
             <header
                 ref={ref}
-                className="bg-white flex items-center justify-between xl:px-[80px] lg:px-[60px] lg:py-[20px] md:px-[16px] px-[8px] py-[16px] w-full fixed top-0 z-50"
+                className="bg-white flex items-center justify-between xl:px-[80px] lg:px-[60px] lg:py-[20px] md:px-[16px] px-[8px] py-[16px] w-full sticky top-0 z-50"
             >
                 <div
                     className="flex xl:gap-[20px] lg:gap-[8px] md:gap-[12px] flex-row-reverse lg:flex-row items-center w-full"

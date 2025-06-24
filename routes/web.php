@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GuestController;
+use App\Http\Controllers\GuestProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -13,6 +14,10 @@ use Inertia\Inertia;
 */
 
 Route::get('/getLatestProducts', [GuestController::class, 'getLatestProducts'])->name('getLatestProducts');
+Route::get('/getCategories', [GuestController::class, 'getCategories'])->name('getCategories');
+Route::get('/products', [GuestProductController::class, 'products'])->name('products');
+Route::get('/product-detail/{id}', [GuestProductController::class, 'productDetail'])->name('product-detail');
+
 
 
 Route::get('/', function () {

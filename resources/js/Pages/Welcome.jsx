@@ -54,7 +54,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             {/* Banner Section */}
             <div className="flex flex-col w-full">
                 <Banner offsetTop={headerHeight} ref={bannerRef} />
-                <div style={{ paddingTop: `${topPadding}px` }}>
+                <div>
                     <HeroSection />
                 </div>
             </div>
