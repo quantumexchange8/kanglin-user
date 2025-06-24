@@ -18,7 +18,7 @@ export default ({
 
     switch (variant) {
         case "secondary":
-            variantClasses = `text-indigo-900 font-medium hover:bg-indigo-200 disabled:bg-indigo-100`;
+            variantClasses = `bg-indigo-100 text-indigo-900 font-medium hover:bg-indigo-200 disabled:bg-indigo-100`;
             break;
         case "tertiary":
             variantClasses = `border-2 border-[#53198580] border-solid text-indigo-900 font-medium hover:text-indigo-50 hover:bg-indigo-900`;

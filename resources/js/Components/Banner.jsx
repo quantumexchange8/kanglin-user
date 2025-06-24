@@ -1,11 +1,15 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { SpeakerIcon } from "./Icon";
 
-export default function Banner({ children }) {
+const Banner = forwardRef(function Banner({ offsetTop }, ref) {
     return (
         <>
-            <div className="w-full h-9 flex-col items-start gap-[10px] justify-between bg-linear py-[8px] xl:px-[80px] lg:px-[60px] md:px-[40px] px-[16px]">
-                <div className="flex justify-between items-center text-sm max-[767px]:gap-[40px] font-medium text-indigo-50 text-xs md:text-sm">
+            <div
+                ref={ref}
+                style={{ top: `${offsetTop}px` }}
+                className="w-full h-9 flex-col items-start gap-[10px] justify-between bg-linear py-[8px] xl:px-[80px] lg:px-[60px] md:px-[40px] px-[16px] fixed top-0 z-50 "
+            >
+                <div className="flex justify-between items-center max-[767px]:gap-[40px] font-medium text-indigo-50 text-xs md:text-sm">
                     <div className="flex items-center gap-1 flex-1 overflow-hidden">
                         <SpeakerIcon />
                         <p className="whitespace-nowrap">『新聞快訊』</p>
@@ -20,4 +24,6 @@ export default function Banner({ children }) {
             </div>
         </>
     );
-}
+});
+
+export default Banner;

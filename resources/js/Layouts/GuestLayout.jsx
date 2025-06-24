@@ -4,11 +4,15 @@ import { CartIcon, UserIcon } from "@/Components/Icon";
 import { Logo, LogoWhite } from "@/Components/Logo";
 import Navbar from "@/Components/NavBar";
 import { Link } from "@inertiajs/react";
+import React, { forwardRef } from "react";
 
-export default function GuestLayout({ children }) {
+const GuestLayout = forwardRef(function GuestLayout({ children }, ref) {
     return (
         <>
-            <header className="bg-white flex items-center justify-between xl:px-[80px] lg:px-[60px] lg:py-[20px] md:px-[16px] px-[8px] py-[16px] ">
+            <header
+                ref={ref}
+                className="bg-white flex items-center justify-between xl:px-[80px] lg:px-[60px] lg:py-[20px] md:px-[16px] px-[8px] py-[16px] w-full fixed top-0 z-50"
+            >
                 <div
                     className="flex xl:gap-[20px] lg:gap-[8px] md:gap-[12px] flex-row-reverse lg:flex-row items-center w-full"
                     style={{ justifyContent: "start" }}
@@ -25,9 +29,7 @@ export default function GuestLayout({ children }) {
             </header>
 
             {/* Content */}
-            <div className="flex flex-col">
-                {children}
-            </div>
+            <div className="flex flex-col">{children}</div>
 
             {/* footer */}
             <footer className="flex flex-col lg:gap-[100px] md:gap-[60px] gap-5 bg-gray-950 text-gray-50 xl:px-[80px] lg:px-[60px] lg:pt-[80px] md:p-[40px] px-4 py-5">
@@ -115,4 +117,6 @@ export default function GuestLayout({ children }) {
             </footer>
         </>
     );
-}
+});
+
+export default GuestLayout;

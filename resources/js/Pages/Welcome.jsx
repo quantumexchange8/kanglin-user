@@ -1,13 +1,16 @@
 import Banner from "@/Components/Banner";
 import BenefitSection from "@/Pages/Guest/BenefitSection";
 import Button from "@/Components/Button";
-import HeroSection from "@/Components/HeroSection";
+import HeroSection from "@/Pages/Guest/HeroSection";
 import InputError from "@/Components/InputError";
 import InputLabel from "@/Components/InputLabel";
 import TextInput from "@/Components/TextInput";
 import GuestLayout from "@/Layouts/GuestLayout";
 import { Head, Link } from "@inertiajs/react";
 import LatestProductSection from "./Guest/LatestProductSection";
+import { useRef, useEffect, useState } from "react";
+import BrandStorySection from "./Guest/BrandStorySection";
+import TestimonialSection from "./Guest/TestimonialSection";
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     const handleImageError = () => {
@@ -21,14 +24,39 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
         document.getElementById("background")?.classList.add("!hidden");
     };
 
+    const headerRef = useRef(null);
+    const [headerHeight, setHeaderHeight] = useState(0);
+    const bannerRef = useRef(null);
+    const [topPadding, setTopPadding] = useState(0);
+
+    //Set Fixed header and banner position & content padding Top
+    useEffect(() => {
+        const updateHeight = () => {
+            if (headerRef.current) {
+                setHeaderHeight(headerRef.current.offsetHeight);
+                if (bannerRef.current) {
+                    const headerHeight = headerRef.current?.offsetHeight || 0;
+                    const bannerHeight = bannerRef.current?.offsetHeight || 0;
+                    setTopPadding(headerHeight + bannerHeight);
+                }
+            }
+        };
+
+        updateHeight(); // Initial
+        window.addEventListener("resize", updateHeight); // Responsive
+        return () => window.removeEventListener("resize", updateHeight);
+    }, []);
+
     return (
-        <GuestLayout>
+        <GuestLayout ref={headerRef}>
             <Head title="Welcome" />
 
             {/* Banner Section */}
             <div className="flex flex-col w-full">
-                <Banner />
-                <HeroSection />
+                <Banner offsetTop={headerHeight} ref={bannerRef} />
+                <div style={{ paddingTop: `${topPadding}px` }}>
+                    <HeroSection />
+                </div>
             </div>
 
             {/* Latest product section */}
@@ -39,9 +67,15 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                 <BenefitSection />
             </div>
 
-            {/* Benefit Section */}
+            {/* Brand Story Section */}
+            <div>
+                <BrandStorySection />
+            </div>
 
-
+            {/* Testimonial Section */}
+            <div>
+                <TestimonialSection />
+            </div>
         </GuestLayout>
     );
 }
