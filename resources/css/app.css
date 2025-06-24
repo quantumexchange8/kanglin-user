@@ -79,3 +79,32 @@
 .ant-drawer .ant-drawer-body {
     padding: 32px 20px 20px 20px;
 }
+
+.ant-carousel .slick-dots li {
+    background: var(--Indigo-25, #fcf9ff);
+}
+
+.custom-carousel .slick-slide > div {
+    display: block !important;
+}
+.custom-carousel .slick-list {
+    overflow: hidden;
+}
+
+.custom-carousel .slick-dots-bottom {
+    bottom: -50px;
+}
+
+.custom-carousel .slick-track {
+    overflow: hidden;
+}
+
+.ant-carousel .custom-carousel .slick-next, .custom-carousel .ant-carousel .slick-prev {
+    background-color: #F9FAFC;
+    color: black;
+}
+
+.ant-carousel .custom-carousel .slick-prev, .custom-carousel .ant-carousel .slick-next {
+    background-color: #F9FAFC;
+    color: black;
+}

@@ -7,6 +7,7 @@ import InputLabel from "@/Components/InputLabel";
 import TextInput from "@/Components/TextInput";
 import GuestLayout from "@/Layouts/GuestLayout";
 import { Head, Link } from "@inertiajs/react";
+import LatestProductSection from "./Guest/LatestProductSection";
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     const handleImageError = () => {
@@ -29,6 +30,9 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                 <Banner />
                 <HeroSection />
             </div>
+
+            {/* Latest product section */}
+            <LatestProductSection />
 
             {/* Benefit Section */}
             <div>

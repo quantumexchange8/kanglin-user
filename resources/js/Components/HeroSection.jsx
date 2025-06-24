@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel } from "antd";
+
 const contentStyle = {
     margin: 0,
     color: "#fff",
@@ -29,4 +30,5 @@ const HeroSection = () => (
         </Carousel>
     </>
 );
+
 export default HeroSection;

@@ -23,6 +23,7 @@ export default forwardRef(function TextInput(
 
     return (
             <input
+                ref={input}
                 {...props}
                 type={type}
                 className={
