@@ -152,3 +152,10 @@ select:focus,
 .custom-input-number .ant-input-number-group .ant-input-number-group-addon {
     background: white;
 }
+
+.custom-badge .ant-badge-multiple-words {
+    padding: 4px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -2,6 +2,7 @@ import Button from "@/Components/Button";
 import { FilterIcon, RefreshIcon, SearchIcon, XIcon } from "@/Components/Icon";
 import SearchInput from "@/Components/SearchInput";
 import GuestLayout from "@/Layouts/GuestLayout";
+import { Link } from "@inertiajs/react";
 import { Checkbox, Menu, Select, Slider } from "antd";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -40,6 +41,10 @@ export default function ProductsListing() {
 
     const productDetails = (product) => {
         window.location.href = `/product-detail/${product.id}`; // Redirect to product details page
+    }
+
+    const directViewMore = (category) => {
+        window.location.href = `/category-product/${category.id}`; // Redirect to category product page
     }
 
     return (
@@ -199,7 +204,12 @@ export default function ProductsListing() {
                                             <div key={index} className="flex flex-col border-b border-gray-50 md:py-8 xl:p-5">
                                                 {/* category name */}
                                                 <div className="pt-4 px-4 md:p-0 flex flex-col gap-1">
-                                                    <span className="text-gray-950 text-base md:text-lg font-bold">{category.name}</span>
+                                                    <div className="flex justify-between ">
+                                                        <span className="text-gray-950 text-base md:text-lg font-bold">{category.name}</span>
+                                                        <div className="underline underline-offset-2 text-indigo-800 cursor-pointer" onClick={() => directViewMore(category)}>
+                                                            全部產品
+                                                        </div>
+                                                    </div>
                                                     <span className="text-gray-400 text-xs md:text-sm font-medium">{category.description ? category.description : '-'}</span>
                                                 </div>
                                                 {/* category's product */}
@@ -208,7 +218,7 @@ export default function ProductsListing() {
                                                         category.products.length > 0 ? (
                                                             <>
                                                                 {
-                                                                    category.products.map((product, idx) => (
+                                                                    category.products.slice(0, 6).map((product, idx) => (
                                                                         <div key={idx} className="flex flex-col gap-3 md:max-w-[200px] w-full cursor-pointer hover:bg-gray-25 " onClick={() => productDetails(product)}>
                                                                             {/* product img */}
                                                                             <div className="w-full bg-gray-50 rounded-[3px] py-3 px-4 h-[156px]">
