@@ -101,9 +101,8 @@ export default function ProductsListing() {
                     </div>
                 </div>
 
-                {/* web 1440 topbar */}
                 <div className="flex gap-5 xl:px-20 xl:py-7">
-                    {/* filter bar */}
+                    {/* filter bar */} {/* web 1440 topbar */}
                     <div className="hidden xl:flex flex-col gap-4 max-w-60 w-full">
                         <div className="bg-white flex flex-col w-full border border-gray-100 rounded-[5px]">
                             <div className="p-4 text-lg font-bold bg-linear bg-clip-text text-transparent border-b border-gray-50">搜你所愛</div>
@@ -212,11 +211,11 @@ export default function ProductsListing() {
                                                                     category.products.map((product, idx) => (
                                                                         <div key={idx} className="flex flex-col gap-3 md:max-w-[200px] w-full cursor-pointer hover:bg-gray-25 " onClick={() => productDetails(product)}>
                                                                             {/* product img */}
-                                                                            <div className="max-h-[156px] w-full h-full bg-gray-50 rounded-[3px] ">
+                                                                            <div className="w-full bg-gray-50 rounded-[3px] py-3 px-4 h-[156px]">
                                                                                 <img 
-                                                                                    src={product.image} 
+                                                                                    src={product.product_thumbnail} 
                                                                                     alt={product.name} 
-                                                                                    className="w-full h-[156px] object-cover bg-gray-50 rounded-[3px]"
+                                                                                    className="w-full object-cover "
                                                                                 />
                                                                             </div>
                                                                             <div className="flex flex-col gap-2">

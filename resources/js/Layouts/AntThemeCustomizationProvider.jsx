@@ -29,6 +29,13 @@ function AntThemeCustomizationProvider({ children }) {
                     },
                     Rate: {
                         starSize: '16px'
+                    },
+                    InputNumber: {
+                        paddingBlock: '12px',
+                        paddingInline: '12px',
+                    },
+                    Progress: {
+                        defaultColor: '#7C4696'
                     }
                 }
             }}

@@ -510,6 +510,23 @@ const WhatAppsIcon = () => {
     );
 }
 
+const LikeIcon = () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M13.4253 2.5C16.3605 2.5 18.3327 5.29375 18.3327 7.9C18.3327 13.1781 10.1475 17.5 9.99935 17.5C9.8512 17.5 1.66602 13.1781 1.66602 7.9C1.66602 5.29375 3.63824 2.5 6.57342 2.5C8.25861 2.5 9.36046 3.35312 9.99935 4.10312C10.6382 3.35312 11.7401 2.5 13.4253 2.5Z" stroke="#531985" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    );
+}
+
+const LikeActiveIcon = () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+            <path d="M13.4253 3.16406C16.3605 3.16406 18.3327 5.95781 18.3327 8.56406C18.3327 13.8422 10.1475 18.1641 9.99935 18.1641C9.8512 18.1641 1.66602 13.8422 1.66602 8.56406C1.66602 5.95781 3.63824 3.16406 6.57342 3.16406C8.25861 3.16406 9.36046 4.01719 9.99935 4.76719C10.6382 4.01719 11.7401 3.16406 13.4253 3.16406Z" fill="#ED1539" stroke="#ED1539" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    );
+}
+
+
 
 export {
     CartIcon,
@@ -536,4 +553,6 @@ export {
     WeChatIcon,
     LineIcon,
     WhatAppsIcon,
+    LikeIcon,
+    LikeActiveIcon,
 };

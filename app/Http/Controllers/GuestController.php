@@ -13,6 +13,10 @@ class GuestController extends Controller
 
         $products = Product::where('status', 'active')->latest()->get();
 
+        $products->each(function ($product) {
+            $product->product_thumbnail = $product->getFirstMediaUrl('product_thumbnail');
+        });
+
         return response()->json($products);
     }
 
@@ -20,6 +24,12 @@ class GuestController extends Controller
     {
 
         $categories = Category::where('status', 'active')->with(['products'])->get(); 
+
+        $categories->each(function ($category) {
+            $category->products->each(function ($product) {
+                $product->product_thumbnail = $product->getFirstMediaUrl('product_thumbnail');
+            });
+        });
 
         return response()->json($categories);
     }

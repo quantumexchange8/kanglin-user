@@ -21,6 +21,10 @@ class GuestProductController extends Controller
 
         $product = Product::find($id);
 
+        $product->product_images = $product->getMedia('product_images')->map(function ($media) {
+            return $media->getUrl();
+        });
+
         return Inertia::render('Guest/Products/ProductDetail', [
             'product' => $product,
         ]);

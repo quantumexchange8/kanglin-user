@@ -20,6 +20,7 @@ export default {
             backgroundImage: {
                 'linear': 'linear-gradient(90deg, #531985 0.21%, #A44A98 93.09%)',
                 'linear-dark': 'linear-gradient(90deg, #3D1262 0.21%, #832E78 93.09%)',
+                'linear-rating': 'linear-gradient(90deg, #FCF9FF 0.31%, #FFF 99.83%)',
             },
             
             colors: {

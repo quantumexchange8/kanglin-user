@@ -77,12 +77,14 @@ export default function Navbar() {
                                     <p>{t('about')}</p>
                                 </div>
                             </div>
-                            <div className="p-3">
-                                <div className="flex gap-3">
-                                    <ProductIcon />
-                                    <p>{t('product')}</p>
+                            <Link href={route('products')}>
+                                <div className="p-3">
+                                    <div className="flex gap-3">
+                                        <ProductIcon />
+                                        <p>{t('product')}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                             <div className="p-3">
                                 <div className="flex gap-3">
                                     <NewsIcon />
