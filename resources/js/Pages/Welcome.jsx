@@ -51,13 +51,11 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
         <GuestLayout ref={headerRef}>
             <Head title="Welcome" />
+            <Banner offsetTop={headerHeight} ref={bannerRef} />
 
             {/* Banner Section */}
             <div className="flex flex-col w-full">
-                <Banner offsetTop={headerHeight} ref={bannerRef} />
-                <div style={{ paddingTop: `${topPadding}px` }}>
-                    <HeroSection />
-                </div>
+                <HeroSection />
             </div>
 
             {/* Latest product section */}

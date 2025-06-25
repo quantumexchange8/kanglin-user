@@ -33,7 +33,7 @@ export default function Navbar() {
     const navItems = [
         { label: t("home"), href: route("home") },
         { label: t("about"), href: route("home") },
-        { label: t("product"), href: route("home") },
+        { label: t("product"), href: route("products") },
         { label: t("news"), href: route("home") },
     ];
 
@@ -77,12 +77,14 @@ export default function Navbar() {
                                     <p>{t('about')}</p>
                                 </div>
                             </div>
-                            <div className="p-3">
-                                <div className="flex gap-3">
-                                    <ProductIcon />
-                                    <p>{t('product')}</p>
+                            <Link href={route('products')}>
+                                <div className="p-3">
+                                    <div className="flex gap-3">
+                                        <ProductIcon />
+                                        <p>{t('product')}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                             <div className="p-3">
                                 <div className="flex gap-3">
                                     <NewsIcon />

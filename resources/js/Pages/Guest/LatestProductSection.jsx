@@ -57,6 +57,9 @@ export default function LatestProductSection() {
     const slidesToShow = getSlidesToShow();
     const productGroups = chunkProducts(latestProducts, slidesToShow);
 
+    const productDetails = (product) => {
+        window.location.href = `/product-detail/${product.id}`
+    }
 
     return (
         <div className="w-full py-[60px] px-4 md:px-10 lg:py-20 lg:px-[60px] xl:p-20 flex flex-col gap-10 lg:gap-[60px]">
@@ -78,46 +81,50 @@ export default function LatestProductSection() {
                     adaptiveHeight={true}
                     className="custom-carousel" // 添加自定义类名
                 >
-                    {productGroups.map((group, index) => (
-                        <div key={index} className="flex justify-center">
-                            <div className="flex justify-center">
-                                <div className={`grid ${isSm ? 'grid-cols-2' : ''} ${isMd ? 'grid-cols-3' : ''} ${isLg ? 'grid-cols-4' : ''} ${isXl ? 'grid-cols-6' : ''} gap-5 w-full md:max-w-[550px] lg:max-w-[740px] xl:max-w-[1120px] px-5 `}>
-                                    {group.map((product, idx) => (
-                                        <div key={`${index}-${idx}`} className="flex flex-col gap-3 md:max-w-[170px]">
-                                            <div className="overflow-hidden flex flex-col gap-3">
-                                                <img 
-                                                    src={product.image} 
-                                                    alt={product.name} 
-                                                    className="w-full h-[156px] object-cover bg-gray-50 rounded-[3px]"
-                                                />
-                                                <div className="flex flex-col gap-4">
-                                                    <div className="flex flex-col gap-1">
-                                                        <div className="text-gray-950 text-sm font-medium line-clamp-2 h-9">{product.name}</div>
-                                                        <div className="flex flex-col">
-                                                            <span className="text-base font-bold text-gray-900">${product.product_price}</span>
-                                                            <span className="text-indigo-900 text-sm font-bold">+{product.product_pv}</span>
+                    {
+                        productGroups.map((group, index) => (
+                            <div key={index} className="flex justify-center">
+                                <div className="flex justify-center">
+                                    <div className={`grid ${isSm ? 'grid-cols-2' : ''} ${isMd ? 'grid-cols-3' : ''} ${isLg ? 'grid-cols-4' : ''} ${isXl ? 'grid-cols-6' : ''} gap-5 w-full md:max-w-[550px] lg:max-w-[740px] xl:max-w-[1120px] px-5 `}>
+                                        {group.map((product, idx) => (
+                                            <div key={`${index}-${idx}`} className="flex flex-col gap-3 md:max-w-[170px]" onClick={() => productDetails(product)}>
+                                                <div className="overflow-hidden flex flex-col gap-3">
+                                                    <div className="py-3 px-4 bg-gray-50 rounded-[3px] h-[156px] ">
+                                                        <img 
+                                                            src={product.product_thumbnail}
+                                                            alt={product.name} 
+                                                            className="w-full object-cover "
+                                                        />
+                                                    </div>
+                                                    <div className="flex flex-col gap-4">
+                                                        <div className="flex flex-col gap-1">
+                                                            <div className="text-gray-950 text-sm font-medium line-clamp-2 h-9">{product.name}</div>
+                                                            <div className="flex flex-col">
+                                                                <span className="text-base font-bold text-gray-900">${product.product_price}</span>
+                                                                <span className="text-indigo-900 text-sm font-bold">+{product.product_pv}</span>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div className="flex md:hidden w-full">
-                                                        <Button size="sm" variant="tertiary" className="flex items-center gap-2 w-full" >
-                                                            <Cart2Icon />
-                                                            <span></span>加入購物車
-                                                        </Button>
-                                                    </div>
-                                                    <div className="hidden md:flex w-full">
-                                                        <Button size="md" variant="tertiary" className="flex items-center gap-2 w-full" >
-                                                            <Cart2Icon />
-                                                            <span></span>加入購物車
-                                                        </Button>
+                                                        <div className="flex md:hidden w-full">
+                                                            <Button size="sm" variant="tertiary" className="flex items-center gap-2 w-full" >
+                                                                <Cart2Icon />
+                                                                <span></span>加入購物車
+                                                            </Button>
+                                                        </div>
+                                                        <div className="hidden md:flex w-full">
+                                                            <Button size="md" variant="tertiary" className="flex items-center gap-2 w-full" >
+                                                                <Cart2Icon />
+                                                                <span></span>加入購物車
+                                                            </Button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))
+                    }
                 </Carousel>
             </div>
         </div>

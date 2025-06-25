@@ -18,6 +18,24 @@ function AntThemeCustomizationProvider({ children }) {
                     },
                     Carousel: {
                         // dotOffset: '20px'
+                    },
+                    Select: {
+                        controlHeight: '44px',
+                        padding: '8px 16px',
+                        optionHeight: '36px',
+                        optionFontSize: '14px',
+                        optionLineHeight: '20px',
+                        optionPadding: '8px 16px',
+                    },
+                    Rate: {
+                        starSize: '16px'
+                    },
+                    InputNumber: {
+                        paddingBlock: '12px',
+                        paddingInline: '12px',
+                    },
+                    Progress: {
+                        defaultColor: '#7C4696'
                     }
                 }
             }}

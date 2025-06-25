@@ -1,18 +1,24 @@
 import React from "react";
 import { StarIcon } from "./Icon";
+import { Rate } from "antd";
 
 const Testimonial = ({ imgUrl, title, text, username, userjoin }) => {
     return (
         <>
-            <div className="flex flex-col flex-shrink-0 gap-3 p-6 bg-white rounded-[5px] w-[329px] lg:w-[381px] h-[234px] lg:h-[283px] shadow-[0px_4px_32px_rgba(96,96,96,0.12)]">
-                <div className="flex gap-1 items-center">
+            <div className="flex flex-col gap-3 p-6 bg-white rounded-[5px] w-[329px]">
+                {/* CHANGE THIS ----> */}
+                {/* <div className="flex gap-1 items-center">
                     <StarIcon />
                     <StarIcon />
                     <StarIcon />
                     <StarIcon />
                     <StarIcon />
-                </div>
-                <div className="flex flex-col justify-between grow">
+                </div> */}
+                
+                {/* TO THIS -----> */}
+                <Rate disabled defaultValue={5}  />
+
+                <div className="flex flex-col justify-between">
                     <div className="flex flex-col gap-2">
                         <p className="text-sm lg:text-lg font-bold text-gray-950">
                             {title}

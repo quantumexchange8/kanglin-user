@@ -27,7 +27,7 @@ export default forwardRef(function TextInput(
                 {...props}
                 type={type}
                 className={
-                    `flex w-[320px] flex-col items-start disabled:bg-gray-100 disabled:text-gray-200 self-stretch gap-1 text-gray-950 bg-white rounded-[5px] border-gray-200 border-1 border-solid py-4 px-5 
+                    `flex flex-col items-start disabled:bg-gray-100 disabled:text-gray-200 self-stretch gap-1 text-gray-950 bg-white rounded-[5px] border-gray-200 border-1 border-solid py-4 px-5 
                     hover:border-indigo-200 focus:border-indigo-900 focus:border-1 focus:ring-0
                      placeholder:text-base placeholder:text-gray-300
                     ${withIcon ? "pl-11 pr-4" : ""}
