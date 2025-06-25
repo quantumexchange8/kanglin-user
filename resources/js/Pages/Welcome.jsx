@@ -11,6 +11,7 @@ import LatestProductSection from "./Guest/LatestProductSection";
 import { useRef, useEffect, useState } from "react";
 import BrandStorySection from "./Guest/BrandStorySection";
 import TestimonialSection from "./Guest/TestimonialSection";
+import NewsSection from "./Guest/NewsSection";
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     const handleImageError = () => {
@@ -75,6 +76,11 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
             {/* Testimonial Section */}
             <div>
                 <TestimonialSection />
+            </div>
+
+            {/* News Section */}
+            <div>
+                <NewsSection />
             </div>
         </GuestLayout>
     );

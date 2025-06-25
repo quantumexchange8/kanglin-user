@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "../../Components/Card";
 import { useTranslation } from "react-i18next";
+import BenefitCard from "../../Components/BenefitCard";
 
 const BenefitSection = () => {
     const { t } = useTranslation();
@@ -24,17 +24,17 @@ const BenefitSection = () => {
                     </p>
                 </div>
                 <div className="flex flex-col lg:flex-row gap-5 self-stretch items-start justify-center">
-                    <Card
+                    <BenefitCard
                         bgUrl="card1.jpg"
                         title={t("card-1-title")}
                         text={t("card-1-text")}
                     />
-                    <Card
+                    <BenefitCard
                         bgUrl="card2.jpg"
                         title={t("card-2-title")}
                         text={t("card-2-text")}
                     />
-                    <Card
+                    <BenefitCard
                         bgUrl="card3.jpg"
                         title={t("card-3-title")}
                         text={t("card-3-text")}
