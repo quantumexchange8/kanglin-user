@@ -17,6 +17,11 @@ Route::get('/getLatestProducts', [GuestController::class, 'getLatestProducts'])-
 Route::get('/getCategories', [GuestController::class, 'getCategories'])->name('getCategories');
 Route::get('/products', [GuestProductController::class, 'products'])->name('products');
 Route::get('/product-detail/{id}', [GuestProductController::class, 'productDetail'])->name('product-detail');
+Route::post('/guest-add-cart', [GuestProductController::class, 'guestAddCart'])->name('guest-add-cart');
+Route::get('/getQuantity', [GuestProductController::class, 'getQuantity'])->name('getQuantity');
+Route::get('/category-product/{id}', [GuestProductController::class, 'categoryProduct'])->name('category-product');
+Route::get('/getCategoryProduct', [GuestProductController::class, 'getCategoryProduct'])->name('getCategoryProduct');
+
 
 Route::get('/', function () {
     return Inertia::render('Home', [

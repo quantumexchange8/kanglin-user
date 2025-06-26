@@ -326,7 +326,7 @@ const ContactIcon = () => {
     );
 };
 
-const Cart2Icon = () => {
+const Cart2Icon = ({ className }) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -334,6 +334,7 @@ const Cart2Icon = () => {
             height="12"
             viewBox="0 0 12 12"
             fill="none"
+            className={className}
         >
             <g clipPath="url(#clip0_732_3761)">
                 <path
@@ -493,21 +494,10 @@ const SearchIcon = ({ className }) => {
     );
 };
 
-const XIcon = () => {
+const XIcon = ({ className }) => {
     return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-        >
-            <path
-                d="M12 4L4 12M4 4L12 12"
-                stroke="#030712"
-                strokeLinecap="round"
-                strokeLinejoin="bevel"
-            />
+        <svg xmlns="http://www.w3.org/2000/svg" className={className} width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M12 4L4 12M4 4L12 12" stroke="#030712" strokeLinecap="round" strokeLinejoin="bevel"/>
         </svg>
     );
 };
@@ -655,20 +645,8 @@ const WhatAppsIcon = () => {
 
 const LikeIcon = () => {
     return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-        >
-            <path
-                d="M13.4253 2.5C16.3605 2.5 18.3327 5.29375 18.3327 7.9C18.3327 13.1781 10.1475 17.5 9.99935 17.5C9.8512 17.5 1.66602 13.1781 1.66602 7.9C1.66602 5.29375 3.63824 2.5 6.57342 2.5C8.25861 2.5 9.36046 3.35312 9.99935 4.10312C10.6382 3.35312 11.7401 2.5 13.4253 2.5Z"
-                stroke="#531985"
-                stroke-width="1.6"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-            />
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M13.4253 2.5C16.3605 2.5 18.3327 5.29375 18.3327 7.9C18.3327 13.1781 10.1475 17.5 9.99935 17.5C9.8512 17.5 1.66602 13.1781 1.66602 7.9C1.66602 5.29375 3.63824 2.5 6.57342 2.5C8.25861 2.5 9.36046 3.35312 9.99935 4.10312C10.6382 3.35312 11.7401 2.5 13.4253 2.5Z" stroke="#531985" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
     );
 };
@@ -686,9 +664,17 @@ const LikeActiveIcon = () => {
                 d="M13.4253 3.16406C16.3605 3.16406 18.3327 5.95781 18.3327 8.56406C18.3327 13.8422 10.1475 18.1641 9.99935 18.1641C9.8512 18.1641 1.66602 13.8422 1.66602 8.56406C1.66602 5.95781 3.63824 3.16406 6.57342 3.16406C8.25861 3.16406 9.36046 4.01719 9.99935 4.76719C10.6382 4.01719 11.7401 3.16406 13.4253 3.16406Z"
                 fill="#ED1539"
                 stroke="#ED1539"
-                stroke-width="1.66667"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="1.66667"
+                strokeLinecap="round"
+                strokeLinejoin="round"/>
+        </svg>
+    );
+}
+
+const ShopiingCartIcon = () => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M4.99967 14.1667C5.4417 14.1667 5.86563 14.3423 6.17819 14.6548C6.49075 14.9674 6.66634 15.3913 6.66634 15.8333C6.66634 16.2754 6.49075 16.6993 6.17819 17.0118C5.86563 17.3244 5.4417 17.5 4.99967 17.5C4.55765 17.5 4.13372 17.3244 3.82116 17.0118C3.5086 16.6993 3.33301 16.2754 3.33301 15.8333C3.33301 15.3913 3.5086 14.9674 3.82116 14.6548C4.13372 14.3423 4.55765 14.1667 4.99967 14.1667ZM4.99967 14.1667H14.1663M4.99967 14.1667V2.5H3.33301M14.1663 14.1667C14.6084 14.1667 15.0323 14.3423 15.3449 14.6548C15.6574 14.9674 15.833 15.3913 15.833 15.8333C15.833 16.2754 15.6574 16.6993 15.3449 17.0118C15.0323 17.3244 14.6084 17.5 14.1663 17.5C13.7243 17.5 13.3004 17.3244 12.9878 17.0118C12.6753 16.6993 12.4997 16.2754 12.4997 15.8333C12.4997 15.3913 12.6753 14.9674 12.9878 14.6548C13.3004 14.3423 13.7243 14.1667 14.1663 14.1667ZM4.99967 4.16667L16.6663 5L15.833 10.8333H4.99967" stroke="#363B44" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round"
             />
         </svg>
     );
@@ -864,4 +850,5 @@ export {
     GoalCardIcon1,
     GoalCardIcon2,
     GoalCardIcon3,
+    ShopiingCartIcon,
 };

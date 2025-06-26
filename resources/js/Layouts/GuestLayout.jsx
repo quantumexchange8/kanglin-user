@@ -1,12 +1,19 @@
 import ApplicationLogo from "@/Components/ApplicationLogo";
 import Button from "@/Components/Button";
-import { CartIcon, UserIcon } from "@/Components/Icon";
+import { CustomToaster } from "@/Components/CustomToaster";
+import { CartIcon, ShopiingCartIcon, UserIcon } from "@/Components/Icon";
 import { Logo, LogoWhite } from "@/Components/Logo";
 import Navbar from "@/Components/NavBar";
+import { useCart } from "@/Pages/Guest/CartContext";
 import { Link } from "@inertiajs/react";
-import React, { forwardRef } from "react";
+import { Badge } from "antd";
+import axios from "axios";
+import React, { forwardRef, useEffect, useState } from "react";
 
 const GuestLayout = forwardRef(function GuestLayout({ children }, ref) {
+
+    const { cartQty } = useCart();
+
     return (
         <>
             <header
@@ -20,13 +27,19 @@ const GuestLayout = forwardRef(function GuestLayout({ children }, ref) {
                     <Logo className="w-[120px] h-[31.44px] md:w-[150px] md:h-[39.301px] lg:w-[200px] lg:h-[52.402px]" />
                     <Navbar />
                 </div>
-                <div className="flex items-center gap-[16px]">
-                    <CartIcon />
+                <div className="flex items-center gap-4 ">
+                    <div className="flex items-center justify-center p-[11px] lg:border border-gray-100 lg:rounded-full">
+                        <Badge count={cartQty ?? 0} overflowCount={9} className="custom-badge">
+                            <ShopiingCartIcon />
+                        </Badge>
+                    </div>
                     <div className="hidden md:block">
                         <UserIcon />
                     </div>
                 </div>
             </header>
+
+            <CustomToaster />
 
             {/* Content */}
             <div className="flex flex-col">{children}</div>

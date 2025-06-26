@@ -35,7 +35,10 @@ function AntThemeCustomizationProvider({ children }) {
                         paddingInline: '12px',
                     },
                     Progress: {
-                        defaultColor: '#7C4696'
+                        defaultColor: '#7C4696',
+                    },
+                    Badge: {
+                        textFontSize: '8px',
                     }
                 }
             }}
