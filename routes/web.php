@@ -11,23 +11,25 @@ use Inertia\Inertia;
  * ==============================
  *          Guest Routes
  * ==============================
-*/
+ */
 
 Route::get('/getLatestProducts', [GuestController::class, 'getLatestProducts'])->name('getLatestProducts');
 Route::get('/getCategories', [GuestController::class, 'getCategories'])->name('getCategories');
 Route::get('/products', [GuestProductController::class, 'products'])->name('products');
 Route::get('/product-detail/{id}', [GuestProductController::class, 'productDetail'])->name('product-detail');
 
-
-
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
+    return Inertia::render('Home', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
 })->name('home');
+
+Route::get('/about', function () {
+    return Inertia::render('About');
+})->name('about');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

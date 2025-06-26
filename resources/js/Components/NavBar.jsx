@@ -26,13 +26,9 @@ export default function Navbar() {
         setMenuOpen(false);
     };
 
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
-    };
-
     const navItems = [
         { label: t("home"), href: route("home") },
-        { label: t("about"), href: route("home") },
+        { label: t("about"), href: route("about") },
         { label: t("product"), href: route("products") },
         { label: t("news"), href: route("home") },
     ];
@@ -61,52 +57,54 @@ export default function Navbar() {
                     <div className="flex flex-col gap-[24px]">
                         <div className="flex gap-[20px] text-base font-medium items-center">
                             <ProfileIcon />
-                            {t('login_register')}
+                            {t("login_register")}
                         </div>
-                        <div className="bg-gray-100 h-[1px]"> </div>
+                        <div className="bg-gray-100 h-[1px]"></div>
                         <div className="flex flex-col gap-[12px]  text-base font-medium">
-                            <div className="p-3">
-                                <div className="flex gap-3">
-                                    <HomeIcon />
-                                    <p>{t('home')}</p>
+                            <Link href={route('home')}>
+                                <div className="p-3">
+                                    <div className="flex gap-3">
+                                        <HomeIcon />
+                                        <p>{t("home")}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                             <div className="p-3">
                                 <div className="flex gap-3">
                                     <AboutIcon />
-                                    <p>{t('about')}</p>
+                                    <p>{t("about")}</p>
                                 </div>
                             </div>
-                            <Link href={route('products')}>
+                            <Link href={route("products")}>
                                 <div className="p-3">
                                     <div className="flex gap-3">
                                         <ProductIcon />
-                                        <p>{t('product')}</p>
+                                        <p>{t("product")}</p>
                                     </div>
                                 </div>
                             </Link>
                             <div className="p-3">
                                 <div className="flex gap-3">
                                     <NewsIcon />
-                                    <p>{t('news')}</p>
+                                    <p>{t("news")}</p>
                                 </div>
                             </div>
                             <div className="p-3">
                                 <div className="flex gap-3">
                                     <TrackingIcon />
-                                    <p>{t('tracking')}</p>
+                                    <p>{t("tracking")}</p>
                                 </div>
                             </div>
                             <div className="p-3">
                                 <div className="flex gap-3">
                                     <ContactIcon />
-                                    <p>{t('contact')}</p>
+                                    <p>{t("contact")}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="flex flex-start w-[120px]">
-                        <Logo height={31.44} width={120} className={""}/>
+                        <Logo height={31.44} width={120} className={""} />
                     </div>
                 </div>
             </Drawer>

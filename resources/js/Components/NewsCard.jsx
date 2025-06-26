@@ -31,7 +31,7 @@ const NewsCard = ({ bgUrl, title, text, date }) => {
                         <p className="text-sm text-gray-700">{date}</p>
                     </div>
                     {/* Content */}
-                    <div className="flex flex-col gap-2 self-stretch h-[92px]">
+                    <div className="flex flex-col gap-2 self-stretch">
                         <p className="text-lg font-bold text-gray-950">
                             {title}
                         </p>
@@ -52,7 +52,7 @@ const NewsCard = ({ bgUrl, title, text, date }) => {
                         </p>
                     </div>
                     {/* Content */}
-                    <div className="flex flex-col gap-2 self-stretch h-[92px]">
+                    <div className="flex flex-col gap-2 self-stretch">
                         <p className="text-base md:text-lg font-bold text-gray-950">
                             {title}
                         </p>

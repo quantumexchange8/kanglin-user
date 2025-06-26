@@ -28,7 +28,7 @@ const TestimonialSection = () => {
                         <div className="flex gap-5 animate-infinite-scroll group-hover:[animation-play-state:paused] w-max">
                             {/* Group 1 */}
                             {[...Array(1)].map((_, i) => (
-                                <div className="flex gap-5 ">
+                                <div className="flex gap-5" key={i}>
                                     <Testimonial
                                         key={`g1-1`}
                                         imgUrl="avatar-1.svg"
@@ -67,7 +67,7 @@ const TestimonialSection = () => {
                         <div className="flex gap-5 animate-infinite-scroll group-hover:[animation-play-state:paused] w-max">
                             {/* Group 2 (must be identical) */}
                             {[...Array(1)].map((_, i) => (
-                                <div className="flex gap-5 ">
+                                <div className="flex gap-5" key={i}>
                                     <Testimonial
                                         key={`g2-1`}
                                         imgUrl="avatar-1.svg"
@@ -107,7 +107,7 @@ const TestimonialSection = () => {
                         <div className="flex gap-5 animate-infinite-scroll group-hover:[animation-play-state:paused] w-max">
                             {/* Group 3 (must be identical) */}
                             {[...Array(1)].map((_, i) => (
-                                <div className="flex gap-5 ">
+                                <div className="flex gap-5" key={i}>
                                     <Testimonial
                                         key={`g3-1`}
                                         imgUrl="avatar-1.svg"
