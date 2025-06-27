@@ -18,7 +18,7 @@ const Testimonial = ({ imgUrl, title, text, username, userjoin }) => {
                 {/* TO THIS -----> */}
                 <Rate disabled defaultValue={5}  />
 
-                <div className="flex flex-col justify-between">
+                <div className="flex flex-col justify-between" style={{flex:"1 0 0px"}}>
                     <div className="flex flex-col gap-2">
                         <p className="text-sm lg:text-lg font-bold text-gray-950">
                             {title}

@@ -6,7 +6,7 @@ import { Link } from "@inertiajs/react";
 const NewsCard = ({ bgUrl, title, text, date }) => {
     return (
         <>
-            <div className="hidden xl:flex group flex-col w-[380px] bg-white rounded-[5px] border-gray-200 border-[1px] border-solid">
+            <div className="hidden xl:flex group flex-col min-w-[380px] bg-white rounded-[5px] border-gray-200 border-[1px] border-solid">
                 <div className="relative w-full h-[221px] overflow-hidden rounded-t-[5px]">
                     {/* Background image layer*/}
                     <div

@@ -30,7 +30,7 @@ export default function Navbar() {
         { label: t("home"), href: route("home") },
         { label: t("about"), href: route("about") },
         { label: t("product"), href: route("products") },
-        { label: t("news"), href: route("home") },
+        { label: t("news"), href: route("news") },
     ];
 
     return (
@@ -61,7 +61,7 @@ export default function Navbar() {
                         </div>
                         <div className="bg-gray-100 h-[1px]"></div>
                         <div className="flex flex-col gap-[12px]  text-base font-medium">
-                            <Link href={route('home')}>
+                            <Link href={route("home")}>
                                 <div className="p-3">
                                     <div className="flex gap-3">
                                         <HomeIcon />
@@ -69,12 +69,14 @@ export default function Navbar() {
                                     </div>
                                 </div>
                             </Link>
-                            <div className="p-3">
-                                <div className="flex gap-3">
-                                    <AboutIcon />
-                                    <p>{t("about")}</p>
+                            <Link href={route("about")}>
+                                <div className="p-3">
+                                    <div className="flex gap-3">
+                                        <AboutIcon />
+                                        <p>{t("about")}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                             <Link href={route("products")}>
                                 <div className="p-3">
                                     <div className="flex gap-3">
@@ -83,12 +85,14 @@ export default function Navbar() {
                                     </div>
                                 </div>
                             </Link>
-                            <div className="p-3">
-                                <div className="flex gap-3">
-                                    <NewsIcon />
-                                    <p>{t("news")}</p>
+                            <Link href={route("news")}>
+                                <div className="p-3">
+                                    <div className="flex gap-3">
+                                        <NewsIcon />
+                                        <p>{t("news")}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </Link>
                             <div className="p-3">
                                 <div className="flex gap-3">
                                     <TrackingIcon />

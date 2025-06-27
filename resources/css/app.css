@@ -99,47 +99,163 @@
     overflow: hidden;
 }
 
-.ant-carousel .custom-carousel .slick-next, .custom-carousel .ant-carousel .slick-prev {
-    background-color: #F9FAFC;
+.ant-carousel .custom-carousel .slick-next,
+.custom-carousel .ant-carousel .slick-prev {
+    background-color: #f9fafc;
     color: black;
 }
 
-.ant-carousel .custom-carousel .slick-prev, .custom-carousel .ant-carousel .slick-next {
-    background-color: #F9FAFC;
+.ant-carousel .custom-carousel .slick-prev,
+.custom-carousel .ant-carousel .slick-next {
+    background-color: #f9fafc;
     color: black;
+}
+
+/* Ant Collapse*/
+.ant-collapse {
+    background-color: #f9fafc;
+    border-radius: 0px;
+}
+
+.ant-collapse-borderless > .ant-collapse-item {
+    background-color: white;
+    padding: 12px 24px;
+    margin-bottom: 16px;
+}
+
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    padding: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.ant-collapse-borderless
+    > .ant-collapse-item
+    > .ant-collapse-content
+    > .ant-collapse-content-box {
+    padding: 0px;
+}
+
+.ant-collapse-content-box p {
+    padding: 8px 0;
+    color: var(--Gray-700, #474f5d);
+    /* 14px/Medium */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.ant-collapse
+    > .ant-collapse-item
+    > .ant-collapse-header
+    .ant-collapse-header-text {
+    color: var(--Gray-900, #363b44);
+    /* 20px/Bold */
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px; /* 110% */
+    padding: 16px 0;
+}
+
+@media (max-width: 767px) {
+    .ant-collapse-borderless > .ant-collapse-item {
+        margin-bottom: 8px;
+    }
+
+    .ant-collapse-content-box p {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .ant-collapse
+        > .ant-collapse-item
+        > .ant-collapse-header
+        .ant-collapse-header-text {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+
+/* Ant Tabs */
+.ant-tabs-top > .ant-tabs-nav::before {
+    border: none;
+}
+
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    background: linear-gradient(90deg, #531985 0.21%, #a44a98 93.09%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.ant-tabs .ant-tabs-tab + .ant-tabs-tab {
+    margin: 0 0 0 20px;
+}
+
+.ant-tabs .ant-tabs-tab-btn {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.ant-tabs-top > .ant-tabs-nav .ant-tabs-ink-bar {
+    height: 4px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #531985 0.21%, #a44a98 93.09%);
+}
+
+.ant-tabs-tabpane.ant-tabs-tabpane-active {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
 }
 
 /* antd select */
 
-[type='text']:focus,
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: 1px solid #d7dbe0;
+    background: white;
+}
+
+[type="text"]:focus,
 input:where(:not([type])):focus,
-[type='email']:focus,
-[type='url']:focus,
-[type='password']:focus,
-[type='number']:focus,
-[type='date']:focus,
-[type='datetime-local']:focus,
-[type='month']:focus,
-[type='search']:focus,
-[type='tel']:focus,
-[type='time']:focus,
-[type='week']:focus,
+[type="email"]:focus,
+[type="url"]:focus,
+[type="password"]:focus,
+[type="number"]:focus,
+[type="date"]:focus,
+[type="datetime-local"]:focus,
+[type="month"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="time"]:focus,
+[type="week"]:focus,
 [multiple]:focus,
 textarea:focus,
 select:focus,
 .ant-select-focused .ant-select-selector {
-  --tw-ring-color: transparent !important;
-  --tw-ring-shadow: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-  /* border-color: #D1D5DB !important; 保持原有边框颜色 */
+    --tw-ring-color: transparent !important;
+    --tw-ring-shadow: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    /* border-color: #D1D5DB !important; 保持原有边框颜色 */
 }
-
 
 .antd-select-custom .ant-select-selector {
     padding: 12px 20px !important;
 }
-
 
 .custom-input-number .ant-input-number-group-addon {
     padding: 0px;

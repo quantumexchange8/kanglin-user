@@ -19,7 +19,7 @@ const NewsSection = () => {
                 </div>
 
                 {/* News Card */}
-                <div className="flex xl:flex-row flex-col xl:gap-5 justify-center">
+                <div className="flex xl:grid xl:grid-cols-3 flex-col xl:gap-5 justify-center">
                     <NewsCard
                         bgUrl="news-1.svg"
                         title={t("news-1-title")}
