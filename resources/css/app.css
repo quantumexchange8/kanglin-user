@@ -159,3 +159,21 @@ select:focus,
     align-items: center;
     justify-content: center;
 }
+
+@media (max-width: 767px) {
+    .custom-input-number-mobile .ant-input-number .ant-input-number-input {
+        padding: 6px 8px;
+        line-height: 10px;
+        font-size: 10px;
+        text-align: center;
+    }
+    
+    .custom-input-number-mobile .ant-input-number-group-addon {
+        padding: 0px;
+    }
+
+}
+
+.custom-antd-select .ant-select-selector {
+     padding: 16px 20px !important;
+}

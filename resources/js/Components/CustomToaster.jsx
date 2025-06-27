@@ -36,7 +36,7 @@ const ToastContent = ({ toast, type }) => {
 
   if (toast.variant === TOAST_VARIANTS.VARIANT1) {
     return (
-      <div className="text-gray-950 text-sm font-semibold">
+      <div className="text-gray-950 text-sm font-semibold flex items-center">
         {resolveValue(toast.title)}
       </div>
     );
@@ -76,8 +76,6 @@ const ToastContainer = ({ type }) => {
     [TOAST_TYPES.SUCCESS]: "bg-green-200",
     [TOAST_TYPES.ERROR]: "bg-error-100"
   };
-
-  console.log('colors', colors)
 
   return `transform flex flex-col w-[640px] shadow-toast ${colors[type] || ''}`;
 };

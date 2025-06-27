@@ -6,7 +6,8 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot } from 'react-dom/client';
 import './i18n'; // <- important!
 import AntThemeCustomizationProvider from './Layouts/AntThemeCustomizationProvider';
-import { CartProvider } from './Pages/Guest/CartContext';
+import { CartProvider } from './Contexts/CartContext';
+
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
