@@ -34,10 +34,12 @@ export default function Cart({ cartItem }) {
     };
 
     const selectedTotal = useMemo(() => {
+        if (!Array.isArray(cartItems)) return 0;
+    
         return cartItems
-          .filter(item => selectedItems.includes(item.id))
-          .reduce((sum, item) => sum + parseFloat(item.product.product_price) * item.quantity, 0);
-      }, [cartItems, selectedItems]);
+            .filter(item => selectedItems.includes(item.id))
+            .reduce((sum, item) => sum + parseFloat(item.product.product_price) * item.quantity, 0);
+    }, [cartItems, selectedItems]);
       
 
 
