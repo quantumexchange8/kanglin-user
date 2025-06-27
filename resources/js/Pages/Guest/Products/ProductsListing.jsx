@@ -126,7 +126,7 @@ export default function ProductsListing() {
                                     }
                                     className="w-[136px]"
                                 />
-                                <Button size="md">搜索</Button>
+                                <Button size="md" className="text-nowrap">搜索</Button>
                             </div>
                         </div>
                         <div className="bg-white flex flex-col border border-gray-100 rounded-[5px]">
@@ -201,7 +201,7 @@ export default function ProductsListing() {
                                 <div className="flex flex-col md:px-[60px] xl:p-0">
                                     {
                                         getCategories.map((category, index) => (
-                                            <div key={index} className="flex flex-col border-b border-gray-50 md:py-8 xl:p-5">
+                                            <div key={index} className="flex flex-col gap-6 border-b border-gray-50 md:py-8 xl:p-5">
                                                 {/* category name */}
                                                 <div className="pt-4 px-4 md:p-0 flex flex-col gap-1">
                                                     <div className="flex justify-between ">
@@ -213,7 +213,7 @@ export default function ProductsListing() {
                                                     <span className="text-gray-400 text-xs md:text-sm font-medium">{category.description ? category.description : '-'}</span>
                                                 </div>
                                                 {/* category's product */}
-                                                <div className="p-4 grid grid-cols-2 md:flex flex-wrap gap-4">
+                                                <div className="p-4 md:p-0 grid grid-cols-2 md:flex flex-wrap gap-4">
                                                     {
                                                         category.products.length > 0 ? (
                                                             <>
@@ -221,12 +221,14 @@ export default function ProductsListing() {
                                                                     category.products.slice(0, 6).map((product, idx) => (
                                                                         <div key={idx} className="flex flex-col gap-3 md:max-w-[200px] w-full cursor-pointer hover:bg-gray-25 " onClick={() => productDetails(product)}>
                                                                             {/* product img */}
-                                                                            <div className="w-full bg-gray-50 rounded-[3px] py-3 px-4 h-[156px]">
-                                                                                <img 
-                                                                                    src={product.product_thumbnail} 
-                                                                                    alt={product.name} 
-                                                                                    className="w-full object-cover "
-                                                                                />
+                                                                            <div className="w-full bg-gray-50 p-2 flex items-center justify-center max-h-[328px] border border-gray-100 rounded-[5px]">
+                                                                                <div className="max-w-[328px] flex items-center justify-center">
+                                                                                    <img 
+                                                                                        src={product.product_thumbnail} 
+                                                                                        alt={product.name} 
+                                                                                        className="w-full object-cover "
+                                                                                    />
+                                                                                </div>
                                                                             </div>
                                                                             <div className="flex flex-col gap-2">
                                                                                 <div className="text-gray-950 text-sm font-medium line-clamp-2 h-9">{product.name}</div>

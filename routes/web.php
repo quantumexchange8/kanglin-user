@@ -21,6 +21,19 @@ Route::post('/guest-add-cart', [GuestProductController::class, 'guestAddCart'])-
 Route::get('/getQuantity', [GuestProductController::class, 'getQuantity'])->name('getQuantity');
 Route::get('/category-product/{id}', [GuestProductController::class, 'categoryProduct'])->name('category-product');
 Route::get('/getCategoryProduct', [GuestProductController::class, 'getCategoryProduct'])->name('getCategoryProduct');
+Route::get('/guest/cart', [GuestProductController::class, 'guestCart'])->name('guest-cart');
+Route::post('/guest-update-cart', [GuestProductController::class, 'guestUpdateCart'])->name('guest-update-cart');
+Route::post('/guest-delete-cart', [GuestProductController::class, 'guestDeleteCart'])->name('guest-delete-cart');
+
+Route::get('/guest-checkout', [GuestProductController::class, 'guestCheckout'])->name('guest-checkout');
+
+Route::get('/getPhoneCode', [GuestProductController::class, 'getPhoneCode'])->name('getPhoneCode');
+Route::get('/getState', [GuestProductController::class, 'getState'])->name('getState');
+
+
+Route::post('/place-order', [GuestProductController::class, 'placeOrder'])->name('place-order');
+Route::get('/order-placed-succesfull', [GuestProductController::class, 'orderPlacedSuccesfull'])->name('order-placed-succesfull');
+
 
 
 Route::get('/', function () {

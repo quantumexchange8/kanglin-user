@@ -13,9 +13,6 @@ function AntThemeCustomizationProvider({ children }) {
                     fontFamily: 'Inter'
                 },
                 components: {
-                    InputNumber: {
-                        
-                    },
                     Carousel: {
                         // dotOffset: '20px'
                     },

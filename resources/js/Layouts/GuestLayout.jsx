@@ -4,15 +4,26 @@ import { CustomToaster } from "@/Components/CustomToaster";
 import { CartIcon, ShopiingCartIcon, UserIcon } from "@/Components/Icon";
 import { Logo, LogoWhite } from "@/Components/Logo";
 import Navbar from "@/Components/NavBar";
-import { useCart } from "@/Pages/Guest/CartContext";
-import { Link } from "@inertiajs/react";
+import { useCart } from "@/Contexts/CartContext";
+import { Link, router } from "@inertiajs/react";
 import { Badge } from "antd";
 import axios from "axios";
 import React, { forwardRef, useEffect, useState } from "react";
 
 const GuestLayout = forwardRef(function GuestLayout({ children }, ref) {
 
-    const { cartQty } = useCart();
+    const { cartCount } = useCart();
+
+    const handleCartClick = () => {
+        const guestToken = localStorage.getItem('guest_token');
+    
+        if (guestToken) {
+            router.get(`/guest/cart`, { guest_token: guestToken });
+        } else {
+            router.get('/guest/cart');
+        }
+    };
+    
 
     return (
         <>
@@ -28,8 +39,8 @@ const GuestLayout = forwardRef(function GuestLayout({ children }, ref) {
                     <Navbar />
                 </div>
                 <div className="flex items-center gap-4 ">
-                    <div className="flex items-center justify-center p-[11px] lg:border border-gray-100 lg:rounded-full">
-                        <Badge count={cartQty ?? 0} overflowCount={9} className="custom-badge">
+                    <div className="flex items-center justify-center p-[11px] lg:border border-gray-100 lg:rounded-full hover:bg-gray-50 cursor-pointer" onClick={handleCartClick}>
+                        <Badge count={cartCount} overflowCount={9} className="custom-badge">
                             <ShopiingCartIcon />
                         </Badge>
                     </div>

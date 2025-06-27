@@ -13,4 +13,9 @@ class CartItem extends Model
         'price',
         'total_price',
     ];
+
+    public function product(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Product::class, 'product_id', 'id');
+    }
 }

@@ -1,8 +1,9 @@
 import Button from "@/Components/Button";
 import { Cart2Icon, FaceBookIcon, LikeActiveIcon, LikeIcon, LineIcon, StarIcon, WeChatIcon, WhatAppsIcon, XIcon } from "@/Components/Icon";
 import { formatAmount } from "@/Composables";
+import { useCart } from "@/Contexts/CartContext";
 import GuestLayout from "@/Layouts/GuestLayout";
-import { Breadcrumb, InputNumber, Progress, Rate } from "antd";
+import { Breadcrumb, Image, InputNumber, Progress, Rate } from "antd";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -16,7 +17,7 @@ export default function ProductDetail({ product }) {
 
     // Function to handle quantity changes
     const [productQty, setProductQty] = useState(1);
-
+    const { incrementCartCount, updateCartCount } = useCart();
 
     const decreaseQty = () => {
         setProductQty(prev => (prev > 1 ? prev - 1 : 1));
@@ -51,7 +52,9 @@ export default function ProductDetail({ product }) {
                 product_id: product.id,
                 quantity: productQty,
             });
-    
+
+            incrementCartCount(productQty);
+            
             // Optionally show a toast or feedback
             toast.success('成功加入購物車!', {
                 title: '成功加入購物車!',
@@ -96,8 +99,13 @@ export default function ProductDetail({ product }) {
                             <div className="flex flex-col md:flex-row md:gap-5 bg-white">
                                 <div className="flex flex-col gap-3 bg-white px-4 pb-3 md:p-0 w-full">
                                     {/* Main Image Display */}
-                                    <div className="p-5 w-full bg-white h-[328px] flex items-center justify-center border border-gray-100 rounded-[5px]">
-                                        <img src={selectedImage} alt="Product" className="h-full object-contain" />
+                                    <div className="p-5 w-full bg-white max-h-[328px] flex items-center justify-center border border-gray-100 rounded-[5px]">
+                                        <div className="max-w-[328px] p-3 flex items-center justify-center">
+                                            <Image 
+                                                src={selectedImage}
+                                                className="h-full object-contain"
+                                            />
+                                        </div>
                                     </div>
                                     {/* Thumbnail Gallery */}
                                     <div className="flex gap-3 ">
